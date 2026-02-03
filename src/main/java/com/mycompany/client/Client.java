@@ -4,13 +4,23 @@
 
 package com.mycompany.client;
 
+import java.net.Socket;
+
 /**
  *
  * @author ADMIN
  */
 public class Client {
-
+    private static String Address = "localhost";
+    //private static String Address = "192.168.1.13";
+    private static int PORT = 1234;
+    
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        try {
+            Socket socket = new Socket(Address, PORT);
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
